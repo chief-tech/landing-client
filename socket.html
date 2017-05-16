@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <!-- include socket.io -->
+  <script src='http://ec2-34-208-132-114.us-west-2.compute.amazonaws.com:8080/socket.io/socket.io.js'></script>
+
+  <script>
+    var socket = io('http://ec2-34-208-132-114.us-west-2.compute.amazonaws.com:8080');
+    socket.emit('sample-event', { my: 'data' });
+  </script>
+</html>
