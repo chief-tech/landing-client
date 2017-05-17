@@ -5,6 +5,20 @@
 
   <script>
     var socket = io('http://ec2-34-208-132-114.us-west-2.compute.amazonaws.com:8080');
-    socket.emit('sample-event', { my: 'data' });
+    socket.on('request-add-user', function() {
+      userInfo = {'PhoneNumber': '206 915 9361', 'LastName': 'Zinda', 'FirstName': 'Isaac', 'Birthday': '19980502'};
+      socket.emit('add-user', userInfo);
+    });
+
+    socket.on('warning', function(data){
+      console.log(data.name); // logs the name of the problem that occured
+      console.log(data.data); // this is a description of the problem, may be null
+    });
+
+    socket.on('info', function(data){
+      console.log(data.name); // logs the name of the problem that occured
+      console.log(data.data); // this is a description of the problem, may be null
+    });
+
   </script>
 </html>
