@@ -5,20 +5,40 @@
 
   <script>
     var socket = io('http://ec2-34-208-132-114.us-west-2.compute.amazonaws.com:8080');
-    socket.on('request-add-user', function() {
-      userInfo = {'PhoneNumber': '206 915 9361', 'LastName': 'Zinda', 'FirstName': 'Isaac', 'Birthday': '19980502'};
-      socket.emit('add-user', userInfo);
-    });
 
+    // this code adds a new user
+    userInfo = {'PhoneNumber': '206 915 2306', 'LastName': 'Zinda', 'FirstName': 'Isaac', 'Birthday': '19980502'};
+    socket.emit('add-user', userInfo);
+
+    // any time a warning is issued, this logs what the warning says
     socket.on('warning', function(data){
-      console.log(data.name); // logs the name of the problem that occured
-      console.log(data.data); // this is a description of the problem, may be null
+      console.log(data);
     });
 
-    socket.on('info', function(data){
-      console.log(data.name); // logs the name of the problem that occured
-      console.log(data.data); // this is a description of the problem, may be null
+    // this event fires when a user is added successfully
+    socket.on('user-added', function(){
+      console.log("a user was added");
     });
+
+    // this event fires when you try to add a user, but the number is already taken
+    // also fires when you try to change a photo but the specified phone number has not been registered
+    socket.on('number-unavailable', function(){
+      console.log('the number is already taken :(');
+    });
+
+    // this event fires if you try to add a user or change a phone number, and specify an invalid phone number
+    socket.on('invalid-number', function(){
+      console.log('the number is in the wrong format');
+    });
+
+    // this event fires if the photo was successfully changed
+    socket.on('photo-changed', function(){
+      console.log('photo was successfully changed');
+    });
+
+    photoInfo = {'PhoneNumber': '206 915 9361', 'ProfilePicturePath': 'testphoto.jpg'};
+    socket.emit('change-photo', photoInfo);
+
 
   </script>
 </html>
