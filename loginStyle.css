@@ -29,6 +29,7 @@ html{
   width: 120px;
   height: 120px;
   border-radius: 50%;
+  align-items: left;
   margin: 0 auto;
   border: 3px solid #94979c;
   color: #94979c;
