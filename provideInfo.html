@@ -10,7 +10,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="DriverSignUpStyle.css">
+    <link rel="stylesheet" href="./provideInfo.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,28 +26,19 @@
           <form action="#" class="form-horizontal">
 
             <div class="NewUser">
-              <h1>New User</h1>
-            </div>
-
-            <div class="input-group lg">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="firstName" class="form-control" placeholder="First Name" autofocus>
-            </div>
-
-            <div class="input-group lg">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="lastName" class="form-control" placeholder="Last Name">
+              <h1>A Bit More Information...</h1>
             </div>
 
             <div class="input-group lg">
               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-              <input type="DOB" class="form-control" placeholder="Date of Birth">
+              <input id = "birthday" type="DOB" class="form-control" placeholder="Date of Birth">
             </div>
 
             <div class="input-group lg">
               <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-              <input type="phone" class="form-control" placeholder="Phone Number">
+              <input id = "phone" type="phone" class="form-control" placeholder="Phone Number">
             </div>
+            <button id="submit" class="btn btn-default">Submit</button>
 
           </form>
         </div>
@@ -58,5 +49,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src='https://driver.letschief.com:4433/socket.io/socket.io.js'></script>
+    <script src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script src="./js/socket.js"></script>
+    <script src="./js/facebook.js"></script>
+    <script src="./js/provideInfo.js"></script>
   </body>
 </html>
