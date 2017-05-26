@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Chief</title>
+      <title>Driver Landing Page</title>
 
       <!-- Bootstrap -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -30,6 +30,9 @@
         }
         .red{
           background-color: red;
+        }
+        .footer{
+          margin-top: 100px;
         }
       </style>
 
@@ -83,13 +86,14 @@
             </form>
           </div>
 
-          <div class="btn-group btn-group-justified">
-            <a href="#" class="btn btn-default">Contact Us</a>
-            <a href="#" class="btn btn-default">Share Access Code</a>
-            <a href="#" class="btn btn-default">Survey</a>
-            <a href="#" class="btn btn-default">Direct Deposit</a>
+          <div class="footer">
+            <div class="btn-group btn-group-justified">
+              <a href="#" class="btn btn-default">Contact Us</a>
+              <a href="#" class="btn btn-default" value="H3U-8ZE" onclick="alert(this.value)">Share Access Code</a>
+              <a href="#survey" class="btn btn-default">Survey</a>
+              <a href="#directDeposit" class="btn btn-default">Direct Deposit</a>
+            </div>
           </div>
-
         </section>
 
         <section class="test green" data-section-name="green">
@@ -115,6 +119,11 @@
                 section:".test"
             });
         });
+        </script>
+        <script>
+          function myFunction(){
+          document.getElementById("myBtn").value = "newButtonValue";
+        }
         </script>
     </body>
 </html>
