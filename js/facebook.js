@@ -38,8 +38,21 @@ function getAccessToken(callback) {
   });
 }
 
+function getUserName(callback) {
+  getAccessToken(function(error, accessToken) {
+    if(error) {
+      callback(error, null, null);
+      return;
+    }
+
+    FB.api('/me?access_token=' + accessToken + "&fields=first_name,last_name", function(response) {
+      callback(null, response.first_name, response.last_name);
+      return;
+    });
+  });
+}
+
 function loginStatusChange() {
-  console.log("status change");
   FB.getLoginStatus(function(response) {
     // if we are not on the login page and we are not connected, redirect to login page
     if (response.status == "connected")
