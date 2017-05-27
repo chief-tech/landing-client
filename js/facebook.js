@@ -61,7 +61,7 @@ function loginStatusChange() {
 
       // send the token to the server for verification
       callWhenConnected(function() {
-        socket.emit('verify-user', {"Token": token});
+        socket.emit('verify-user', {"Database": "Drivers", "Token": token});
       });
     // if we are not logged into facebook
     } else {

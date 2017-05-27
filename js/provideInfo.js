@@ -12,13 +12,18 @@ $(document).ready(function() {
 // resend verification code
 $("#submit").click(function(){
   getAccessToken(function(error, accessToken) {
-    callWhenConnected(function()
-    {
-      var birthday = $("#birthday").val();
-      console.log(birthday);
-      object = {"FirstName": "Isaac", "LastName": "Zinda", "PhoneNumber": $("#phone").val(), "Birthday": birthday, "Token": accessToken};
-      // alert(object);
-      socket.emit('add-user', object);
+    getUserName(function(error, firstName, lastName){
+      // if we got the name successfully
+      if (!error) {
+        callWhenConnected(function()
+        {
+          var birthday = $("#birthday").val();
+          console.log(birthday);
+          object = {"Database": "Drivers", "FirstName": firstName, "LastName": lastName, "PhoneNumber": $("#phone").val(), "Birthday": birthday, "Token": accessToken};
+          // alert(object);
+          socket.emit('add-user', object);
+        });
+      }
     });
   });
 });

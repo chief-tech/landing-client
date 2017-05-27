@@ -3,7 +3,7 @@ $("#resend").click(function(){
   getAccessToken(function(error, accessToken) {
     callWhenConnected(function()
     {
-      socket.emit('send-verification-code', {"Token": accessToken});
+      socket.emit('send-verification-code', {"Database": "Drivers", "Token": accessToken});
     });
   });
 });
@@ -14,7 +14,7 @@ $("#submit").click(function(){
     var verificationCode = $("#code").val();
 
     callWhenConnected(function(){
-      socket.emit('verify-number', {"VerificationCode": verificationCode, "Token": accessToken});
+      socket.emit('verify-number', {"Database": "Drivers", "VerificationCode": verificationCode, "Token": accessToken});
     });
   });
 });
