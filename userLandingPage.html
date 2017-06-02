@@ -13,9 +13,6 @@
       <script src="http://code.jquery.com/jquery-1.6.min.js"></script>
 
       <style>
-        .green{
-          background-color: green;
-        }
         .red{
           background-color: red;
         }
@@ -25,6 +22,35 @@
         .message{
           font-size: 40px;
           padding-top: 80px;
+        }
+        .item{
+          height: 500px;
+          width: 500px;
+          background: #fff;
+          border-radius: 10%;
+        }
+        .content{
+          height: 100%;
+          display: flex;
+          align-items: top;
+          justify-content: center;
+          text-align: center;
+        }
+        .referralText{
+          align: center
+        }
+        .referral{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #1abc9c;
+        }
+        .referralCode{
+          align: center;
+          padding-top: 80px;
+        }
+        .hint{
+          padding-top: 50px;
         }
       </style>
 
@@ -54,12 +80,27 @@
           </div>
         </section>
 
-        <section class="test green" data-section-name="green">
-          <h1>hey there</h1>
-        </section>
-
-        <section class="test red" data-section-name="red">
-          <h1>hi</h1>
+        <section class="test referral" data-section-name="referral">
+          <div class="item">
+            <div class="content">
+              <div class="row">
+                <div class="col-lg-12 referralText">
+                  <h1>Referrals<br><br>
+                  Driver referral code:</h1>
+                </div>
+                <div class="col-lg-12 referralCode" id="referral"/>
+                  <h1 for="referral" id="code"></h1>
+                  <script>
+                  var referralCodes = 'X5J-GJ6';
+                  document.getElementById('code').innerHTML = referralCodes;
+                  </script>
+                </div>
+                <div class="col-lg-12 hint">
+                  <p>Higher referral rank = faster app access</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
