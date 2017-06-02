@@ -12,7 +12,7 @@ $(document).ready(function() {
 // resend verification code
 $("#submit").click(function(){
   getAccessToken(function(error, accessToken) {
-    getUserName(function(error, firstName, lastName){
+    getUserName(function(error, firstName, lastName) {
       // if we got the name successfully
       if (!error) {
         callWhenConnected(function()

@@ -10,7 +10,9 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300"/>
-      <script src="http://code.jquery.com/jquery-1.6.min.js"></script>
+      <link rel="stylesheet" href="./css/loading.css">
+
+      <!-- <script src="http://code.jquery.com/jquery-1.6.min.js"></script> -->
 
       <style>
         .avatar{
@@ -38,6 +40,8 @@
 
     </head>
     <body>
+        <!-- this is the loading class spinner -->
+        <div class="loading">Loading&#8230;</div>
 
         <section class="test chiefVideo" data-section-name="chiefVideo">
           <div class="container text-center">
@@ -111,6 +115,11 @@
 
         <script src="http://cdn.jsdelivr.net/jquery.easing/1.3/jquery.easing.1.3.js"></script>
         <script src="http://yourjavascript.com/6140341282/jquery-scrollify-min.js"></script>
+
+        <script src='https://driver.letschief.com:4433/socket.io/socket.io.js'></script>
+        <script src="//connect.facebook.net/en_US/sdk.js"></script>
+        <script src="./js/socket.js"></script>
+        <script src="./js/facebook.js"></script>
 
         <script>
         $(function(){

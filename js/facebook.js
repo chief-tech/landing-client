@@ -1,5 +1,5 @@
 var loginPageLocation = "https://driver.letschief.com/login.html";
-var infoPageLocation = "https://driver.letschief.com/portal.html";
+var infoPageLocation = "https://driver.letschief.com/driverLandingPage.html";
 var addInfoPageLocation = "https://driver.letschief.com/provideInfo.html";
 var phoneVerificationPageLocation = "https://driver.letschief.com/verifyPhone.html";
 
@@ -71,27 +71,39 @@ function loginStatusChange() {
   });
 }
 
+function removeLoadingButton() {
+  $(".loading").hide();
+}
+
 function gotoInfo() {
   if (window.location != infoPageLocation) {
     window.location = infoPageLocation;
+  } else {
+    removeLoadingButton();
   }
 }
 
 function gotoAddInfo() {
   if (window.location != addInfoPageLocation) {
     window.location = addInfoPageLocation;
+  } else {
+    removeLoadingButton();
   }
 }
 
 function gotoLogin() {
   if (window.location != loginPageLocation) {
     window.location = loginPageLocation;
+  } else {
+    removeLoadingButton();
   }
 }
 
 function gotoPhoneVerification() {
   if (window.location != phoneVerificationPageLocation) {
     window.location = phoneVerificationPageLocation;
+  } else {
+    removeLoadingButton();
   }
 }
 
