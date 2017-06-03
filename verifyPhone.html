@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/verifyPhone.css">
+    <link rel="stylesheet" href="./css/loading.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,6 +21,9 @@
     <![endif]-->
   </head>
   <body>
+    <!-- this is the loading class spinner -->
+    <div class="loading">Loading&#8230;</div>
+
     <div class="home">
       <div class="item">
         <div class="content">
@@ -32,7 +36,7 @@
 
             <div class="input-group lg">
               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input id="code" type="verificationCode" class="form-control" placeholder="X X X - X X X" autofocus>
+              <input id="code" type="verificationCode" class="form-control" placeholder="X X X X X X" autofocus>
             </div>
 
             <button id="submit" class="btn btn-default">Submit</button>
