@@ -33,7 +33,12 @@ html{
   margin-bottom: 100px;
 
 }
-
+.DOB{
+  align-content: center;
+  margin-bottom: 60px;
+  margin-top: 30px;
+  margin-left: 80px;
+}
 .lg{
   margin-bottom: 20px;
 }
