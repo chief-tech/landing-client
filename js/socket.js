@@ -1,7 +1,8 @@
 // setup the socket.io connection
 window.socket = io('driver.letschief.com:4433', { secure: true, port: 4433});
 
-socket.on('invalid-phone-verification', function(){
+
+socket.on('invalid-verification-code', function(){
   alert("You typed the wrong verification code.");
 });
 
